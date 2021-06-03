@@ -1,7 +1,7 @@
 # SPIR-V samples for WGSL
 
-These samples are extracted from the unit tests for the SPIR-V reader in Tint.
-See https://dawn.googlesource.com/tint/+/refs/heads/main/src/reader/spirv/
+These samples are extracted from the unit tests for the SPIR-V reader in [Tint](https://dawn.googlesource.com/tint).
+See [the SPIR-V reader source code](https://dawn.googlesource.com/tint/+/refs/heads/main/src/reader/spirv/).
 
 The original sources are distributed under the Apache 2.0 LICENSE.
 
