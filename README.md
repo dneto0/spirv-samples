@@ -10,9 +10,15 @@ modules that should be convertable into valid WGSL.
 
 Example:
 
-   tint -format wgsl spvasm/SpvUnaryLogicalTest_LogicalNot_Scalar.spvasm
+    tint -format wgsl spvasm/SpvUnaryLogicalTest_LogicalNot_Scalar.spvasm
 
 The examples work except for a handful of issues:
 - crbug.com/tint/860: missing support for transpose
 - crbug.com/tint/862: missing support for textureSampleCompareLevel
 - crbug.com/tint/863: broken support for bool vector & and |
+
+The SPIR-V is valid for SPIR-V 1.0, but some examples use:
+- `SPV_KHR_storage_buffer_storage_class`
+- StorageBuffer storage class (without extension)
+- `SPV_KHR_non_semantic_info`
+- `SPV_KHR_vulkan_memory_model`
