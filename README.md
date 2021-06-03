@@ -10,9 +10,19 @@ modules that should be convertable into valid WGSL.
 
 Example:
 
-    tint -format wgsl spvasm/SpvUnaryLogicalTest_LogicalNot_Scalar.spvasm
+    tint --format wgsl spvasm/SpvUnaryLogicalTest_LogicalNot_Scalar.spvasm
 
-The examples work except for a handful of issues:
+produces the following output:
+
+```
+[[stage(vertex)]]
+fn main() {
+  let x_1 : bool = !(true);
+  return;
+}
+```
+
+The examples work in Tint except for a handful of known issues:
 - [tint:860](crbug.com/tint/860): missing support for transpose
 - [tint:862](crbug.com/tint/862): missing support for textureSampleCompareLevel
 - [tint:863](crbug.com/tint/863): broken support for bool vector & and |
