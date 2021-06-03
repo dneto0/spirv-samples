@@ -13,9 +13,9 @@ Example:
     tint -format wgsl spvasm/SpvUnaryLogicalTest_LogicalNot_Scalar.spvasm
 
 The examples work except for a handful of issues:
-- crbug.com/tint/860: missing support for transpose
-- crbug.com/tint/862: missing support for textureSampleCompareLevel
-- crbug.com/tint/863: broken support for bool vector & and |
+- [tint:860](crbug.com/tint/860): missing support for transpose
+- [tint:862](crbug.com/tint/862): missing support for textureSampleCompareLevel
+- [tint:863](crbug.com/tint/863): broken support for bool vector & and |
 
 The SPIR-V is valid for SPIR-V 1.0, but some examples use:
 - `SPV_KHR_storage_buffer_storage_class`
