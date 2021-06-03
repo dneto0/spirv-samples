@@ -1,0 +1,50 @@
+; Test: SpvParserImportTest_Import_NonSemantic_IgnoredExtInsts.spvasm
+; SPIR-V
+; Version: 1.0
+; Generator: Khronos SPIR-V Tools Assembler; 0
+; Bound: 29
+; Schema: 0
+OpCapability Shader
+OpExtension "SPV_KHR_storage_buffer_storage_class"
+OpExtension "SPV_KHR_non_semantic_info"
+%20 = OpExtInstImport "NonSemantic.ClspvReflection.1"
+OpMemoryModel Logical GLSL450
+OpEntryPoint GLCompute %15 "foo"
+OpExecutionMode %15 LocalSize 1 1 1
+OpSource OpenCL_C 120
+%21 = OpString "foo"
+%23 = OpString "A"
+OpDecorate %_runtimearr_uint ArrayStride 4
+OpMemberDecorate %_struct_2 0 Offset 0
+OpDecorate %_struct_2 Block
+OpDecorate %12 DescriptorSet 0
+OpDecorate %12 Binding 0
+OpDecorate %7 SpecId 0
+OpDecorate %8 SpecId 1
+OpDecorate %9 SpecId 2
+%void = OpTypeVoid
+%24 = OpExtInst %void %20 ArgumentInfo %23
+%uint = OpTypeInt 32 0
+%_runtimearr_uint = OpTypeRuntimeArray %uint
+%_struct_2 = OpTypeStruct %_runtimearr_uint
+%_ptr_StorageBuffer__struct_2 = OpTypePointer StorageBuffer %_struct_2
+%v3uint = OpTypeVector %uint 3
+%_ptr_Private_v3uint = OpTypePointer Private %v3uint
+%7 = OpSpecConstant %uint 1
+%8 = OpSpecConstant %uint 1
+%9 = OpSpecConstant %uint 1
+%14 = OpTypeFunction %void
+%_ptr_StorageBuffer_uint = OpTypePointer StorageBuffer %uint
+%uint_0 = OpConstant %uint 0
+%uint_1 = OpConstant %uint 1
+%uint_2 = OpConstant %uint 2
+%12 = OpVariable %_ptr_StorageBuffer__struct_2 StorageBuffer
+%15 = OpFunction %void Const %14
+%16 = OpLabel
+%19 = OpAccessChain %_ptr_StorageBuffer_uint %12 %uint_0 %uint_0
+%22 = OpExtInst %void %20 Kernel %15 %21
+OpReturn
+OpFunctionEnd
+%25 = OpExtInst %void %20 ArgumentStorageBuffer %22 %uint_0 %uint_0 %uint_0 %24
+%28 = OpExtInst %void %20 SpecConstantWorkgroupSize %uint_0 %uint_1 %uint_2
+

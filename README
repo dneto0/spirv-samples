@@ -1,13 +1,16 @@
+# SPIR-V samples for WGSL
+
 These samples are extracted from the unit tests for the SPIR-V reader in Tint.
-https://dawn.googlesource.com/tint/+/refs/heads/main/src/reader/spirv/
+See https://dawn.googlesource.com/tint/+/refs/heads/main/src/reader/spirv/
 
 The original sources are distributed under the Apache 2.0 LICENSE.
-There are 1048 .spvasm files which can be assembled into SPIR-V binary
+
+There are over 1000 .spvasm files which can be assembled into SPIR-V binary
 modules that should be convertable into valid WGSL.
 
 Example:
 
-   tint -format wgsl tint-spvasm-samples/SpvUnaryLogicalTest_LogicalNot_Scalar.spvasm 
+   tint -format wgsl spvasm/SpvUnaryLogicalTest_LogicalNot_Scalar.spvasm 
 
 The examples work except for a handful of issues:
 - crbug.com/tint/860: missing support for transpose

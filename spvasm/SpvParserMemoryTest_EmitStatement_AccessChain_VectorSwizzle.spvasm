@@ -1,0 +1,26 @@
+; Test: SpvParserMemoryTest_EmitStatement_AccessChain_VectorSwizzle.spvasm
+; SPIR-V
+; Version: 1.0
+; Generator: Khronos SPIR-V Tools Assembler; 0
+; Bound: 101
+; Schema: 0
+OpCapability Shader
+OpMemoryModel Logical Simple
+OpEntryPoint Vertex %100 "main"
+OpName %myvar "myvar"
+%void = OpTypeVoid
+%4 = OpTypeFunction %void
+%uint = OpTypeInt 32 0
+%v4uint = OpTypeVector %uint 4
+%uint_2 = OpConstant %uint 2
+%uint_42 = OpConstant %uint 42
+%_ptr_Workgroup_uint = OpTypePointer Workgroup %uint
+%_ptr_Workgroup_v4uint = OpTypePointer Workgroup %v4uint
+%myvar = OpVariable %_ptr_Workgroup_v4uint Workgroup
+%100 = OpFunction %void None %4
+%11 = OpLabel
+%2 = OpAccessChain %_ptr_Workgroup_uint %myvar %uint_2
+OpStore %2 %uint_42
+OpReturn
+OpFunctionEnd
+

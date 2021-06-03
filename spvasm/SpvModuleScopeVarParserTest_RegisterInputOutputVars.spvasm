@@ -1,0 +1,86 @@
+; Test: SpvModuleScopeVarParserTest_RegisterInputOutputVars.spvasm
+; SPIR-V
+; Version: 1.0
+; Generator: Khronos SPIR-V Tools Assembler; 0
+; Bound: 1301
+; Schema: 0
+OpCapability Shader
+OpMemoryModel Logical Simple
+OpEntryPoint GLCompute %1000 "w1000"
+OpEntryPoint GLCompute %1100 "w1100" %1
+OpEntryPoint GLCompute %1200 "w1200" %2 %15
+OpEntryPoint GLCompute %1300 "w1300" %1 %15 %2 %1
+OpExecutionMode %1000 LocalSize 1 1 1
+OpExecutionMode %1100 LocalSize 1 1 1
+OpExecutionMode %1200 LocalSize 1 1 1
+OpExecutionMode %1300 LocalSize 1 1 1
+%void = OpTypeVoid
+%4 = OpTypeFunction %void
+%bool = OpTypeBool
+%float = OpTypeFloat 32
+%uint = OpTypeInt 32 0
+%int = OpTypeInt 32 1
+%_ptr_Private_bool = OpTypePointer Private %bool
+%_ptr_Private_float = OpTypePointer Private %float
+%_ptr_Private_uint = OpTypePointer Private %uint
+%_ptr_Private_int = OpTypePointer Private %int
+%true = OpConstantTrue %bool
+%false = OpConstantFalse %bool
+%float_0 = OpConstant %float 0
+%float_1_5 = OpConstant %float 1.5
+%uint_1 = OpConstant %uint 1
+%int_n1 = OpConstant %int -1
+%uint_2 = OpConstant %uint 2
+%v2bool = OpTypeVector %bool 2
+%v2uint = OpTypeVector %uint 2
+%v2int = OpTypeVector %int 2
+%v2float = OpTypeVector %float 2
+%mat3v2float = OpTypeMatrix %v2float 3
+%_arr_uint_uint_2 = OpTypeArray %uint %uint_2
+%_struct_30 = OpTypeStruct %uint %float %_arr_uint_uint_2
+%_ptr_Input_uint = OpTypePointer Input %uint
+%_ptr_Output_uint = OpTypePointer Output %uint
+%1 = OpVariable %_ptr_Input_uint Input
+%2 = OpVariable %_ptr_Input_uint Input
+%5 = OpVariable %_ptr_Input_uint Input
+%11 = OpVariable %_ptr_Output_uint Output
+%12 = OpVariable %_ptr_Output_uint Output
+%15 = OpVariable %_ptr_Output_uint Output
+%100 = OpFunction %void None %4
+%33 = OpLabel
+%34 = OpLoad %uint %1
+OpReturn
+OpFunctionEnd
+%200 = OpFunction %void None %4
+%35 = OpLabel
+%36 = OpLoad %uint %2
+OpStore %15 %36
+OpStore %15 %36
+OpReturn
+OpFunctionEnd
+%300 = OpFunction %void None %4
+%37 = OpLabel
+%38 = OpFunctionCall %void %100
+%39 = OpFunctionCall %void %200
+OpReturn
+OpFunctionEnd
+%1000 = OpFunction %void None %4
+%40 = OpLabel
+OpReturn
+OpFunctionEnd
+%1100 = OpFunction %void None %4
+%41 = OpLabel
+%42 = OpFunctionCall %void %100
+OpReturn
+OpFunctionEnd
+%1200 = OpFunction %void None %4
+%43 = OpLabel
+%44 = OpFunctionCall %void %200
+OpReturn
+OpFunctionEnd
+%1300 = OpFunction %void None %4
+%45 = OpLabel
+%46 = OpFunctionCall %void %300
+OpReturn
+OpFunctionEnd
+

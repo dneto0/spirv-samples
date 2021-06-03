@@ -1,0 +1,23 @@
+; Test: SpvModuleScopeVarParserTest_VertexIndex_I32_Load_Direct.spvasm
+; SPIR-V
+; Version: 1.0
+; Generator: Khronos SPIR-V Tools Assembler; 0
+; Bound: 11
+; Schema: 0
+OpCapability Shader
+OpMemoryModel Logical Simple
+OpEntryPoint Vertex %3 "main" %gl_VertexIndex
+OpDecorate %gl_VertexIndex BuiltIn VertexIndex
+%void = OpTypeVoid
+%5 = OpTypeFunction %void
+%float = OpTypeFloat 32
+%uint = OpTypeInt 32 0
+%int = OpTypeInt 32 1
+%_ptr_Input_int = OpTypePointer Input %int
+%gl_VertexIndex = OpVariable %_ptr_Input_int Input
+%3 = OpFunction %void None %5
+%10 = OpLabel
+%2 = OpLoad %int %gl_VertexIndex
+OpReturn
+OpFunctionEnd
+
