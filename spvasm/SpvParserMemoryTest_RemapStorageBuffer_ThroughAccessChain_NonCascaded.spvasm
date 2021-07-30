@@ -6,7 +6,8 @@
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %100 "main"
+OpEntryPoint Fragment %100 "main"
+OpExecutionMode %100 OriginUpperLeft
 OpName %myvar "myvar"
 OpDecorate %myvar DescriptorSet 0
 OpDecorate %myvar Binding 0

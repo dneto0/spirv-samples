@@ -24,21 +24,23 @@ OpExecutionMode %1 OriginUpperLeft
 %float_1_5 = OpConstant %float 1.5
 %uint_1 = OpConstant %uint 1
 %int_n1 = OpConstant %int -1
+%int_14 = OpConstant %int 14
 %uint_2 = OpConstant %uint 2
 %v2bool = OpTypeVector %bool 2
 %v2uint = OpTypeVector %uint 2
 %v2int = OpTypeVector %int 2
 %v2float = OpTypeVector %float 2
+%v4float = OpTypeVector %float 4
 %mat3v2float = OpTypeMatrix %v2float 3
 %_arr_uint_uint_2 = OpTypeArray %uint %uint_2
-%_struct_25 = OpTypeStruct %uint %float %_arr_uint_uint_2
-%_ptr_Private__struct_25 = OpTypePointer Private %_struct_25
+%_struct_27 = OpTypeStruct %uint %float %_arr_uint_uint_2
+%_ptr_Private__struct_27 = OpTypePointer Private %_struct_27
 %uint_2_0 = OpConstant %uint 2
-%28 = OpConstantComposite %_arr_uint_uint_2 %uint_1 %uint_2_0
-%29 = OpConstantComposite %_struct_25 %uint_1 %float_1_5 %28
-%200 = OpVariable %_ptr_Private__struct_25 Private %29
+%30 = OpConstantComposite %_arr_uint_uint_2 %uint_1 %uint_2_0
+%31 = OpConstantComposite %_struct_27 %uint_1 %float_1_5 %30
+%200 = OpVariable %_ptr_Private__struct_27 Private %31
 %1 = OpFunction %void None %3
-%30 = OpLabel
+%32 = OpLabel
 OpReturn
 OpFunctionEnd
 

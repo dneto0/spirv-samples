@@ -2,7 +2,7 @@
 ; SPIR-V
 ; Version: 1.0
 ; Generator: Khronos SPIR-V Tools Assembler; 0
-; Bound: 35
+; Bound: 36
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
@@ -24,24 +24,25 @@ OpExecutionMode %5 OriginUpperLeft
 %float_1_5 = OpConstant %float 1.5
 %uint_1 = OpConstant %uint 1
 %int_n1 = OpConstant %int -1
+%int_14 = OpConstant %int 14
 %uint_2 = OpConstant %uint 2
 %v2bool = OpTypeVector %bool 2
 %v2uint = OpTypeVector %uint 2
 %v2int = OpTypeVector %int 2
 %v2float = OpTypeVector %float 2
+%v4float = OpTypeVector %float 4
 %mat3v2float = OpTypeMatrix %v2float 3
 %_arr_uint_uint_2 = OpTypeArray %uint %uint_2
-%_struct_29 = OpTypeStruct %uint %float %_arr_uint_uint_2
-%30 = OpConstantNull %bool
-%31 = OpConstantNull %int
-%32 = OpConstantNull %uint
-%33 = OpConstantNull %float
-%1 = OpVariable %_ptr_Private_bool Private %30
-%2 = OpVariable %_ptr_Private_int Private %31
-%3 = OpVariable %_ptr_Private_uint Private %32
-%4 = OpVariable %_ptr_Private_float Private %33
+%31 = OpConstantNull %bool
+%32 = OpConstantNull %int
+%33 = OpConstantNull %uint
+%34 = OpConstantNull %float
+%1 = OpVariable %_ptr_Private_bool Private %31
+%2 = OpVariable %_ptr_Private_int Private %32
+%3 = OpVariable %_ptr_Private_uint Private %33
+%4 = OpVariable %_ptr_Private_float Private %34
 %5 = OpFunction %void None %7
-%34 = OpLabel
+%35 = OpLabel
 OpReturn
 OpFunctionEnd
 

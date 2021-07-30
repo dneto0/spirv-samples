@@ -18,20 +18,29 @@ Example:
 produces the following output:
 
 ```
-[[stage(vertex)]]
-fn main() {
+fn main_1() {
   let x_1 : bool = !(true);
   return;
 }
+
+[[stage(fragment)]]
+fn main() {
+  main_1();
+}
 ```
 
-The examples work in Tint except for a handful of known issues:
-- [tint:860](https://crbug.com/tint/860): missing support for transpose
-- [tint:862](https://crbug.com/tint/862): missing support for textureSampleCompareLevel
-- [tint:863](https://crbug.com/tint/863): broken support for bool vector & and |
+The examples work in Tint.
 
 The SPIR-V is valid for SPIR-V 1.0, but some examples use:
 - `SPV_KHR_storage_buffer_storage_class`
 - StorageBuffer storage class (without extension)
 - `SPV_KHR_non_semantic_info`
 - `SPV_KHR_vulkan_memory_model`
+
+# Support notes
+
+The SPIR-V reader in Tint lags other support in Tint.
+
+For example:
+* read-only storage textures have been removed from WGSL and WebGPU, but the SPIR-V reader
+  still generates them.  Sampled textures should be used instead.
