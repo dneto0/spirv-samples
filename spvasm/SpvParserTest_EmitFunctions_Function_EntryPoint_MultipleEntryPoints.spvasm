@@ -2,21 +2,21 @@
 ; SPIR-V
 ; Version: 1.0
 ; Generator: Khronos SPIR-V Tools Assembler; 0
-; Bound: 9
+; Bound: 8
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %main "first_shader"
-OpEntryPoint Vertex %main "second_shader"
+OpEntryPoint Fragment %main "first_shader"
+OpEntryPoint Fragment %main "second_shader"
+OpExecutionMode %main OriginUpperLeft
 OpName %main "main"
 %void = OpTypeVoid
 %3 = OpTypeFunction %void
 %float = OpTypeFloat 32
 %uint = OpTypeInt 32 0
 %int = OpTypeInt 32 1
-%float_0 = OpConstant %float 0
 %main = OpFunction %void None %3
-%8 = OpLabel
+%7 = OpLabel
 OpReturn
 OpFunctionEnd
 

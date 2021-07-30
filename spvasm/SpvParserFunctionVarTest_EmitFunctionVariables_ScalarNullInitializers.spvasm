@@ -6,7 +6,8 @@
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %100 "main"
+OpEntryPoint Fragment %100 "main"
+OpExecutionMode %100 OriginUpperLeft
 OpName %a "a"
 OpName %b "b"
 OpName %c "c"
@@ -28,24 +29,29 @@ OpName %d "d"
 %uint_0 = OpConstant %uint 0
 %uint_1 = OpConstant %uint 1
 %int_n1 = OpConstant %int -1
+%int_0 = OpConstant %int 0
+%int_1 = OpConstant %int 1
+%int_3 = OpConstant %int 3
 %uint_2 = OpConstant %uint 2
 %uint_3 = OpConstant %uint 3
 %uint_4 = OpConstant %uint 4
 %uint_5 = OpConstant %uint 5
+%v2int = OpTypeVector %int 2
 %v2float = OpTypeVector %float 2
 %mat3v2float = OpTypeMatrix %v2float 3
+%32 = OpConstantNull %v2int
 %_arr_uint_uint_2 = OpTypeArray %uint %uint_2
-%_struct_29 = OpTypeStruct %uint %float %_arr_uint_uint_2
-%30 = OpConstantNull %bool
-%31 = OpConstantNull %int
-%32 = OpConstantNull %uint
-%33 = OpConstantNull %float
+%_struct_34 = OpTypeStruct %uint %float %_arr_uint_uint_2
+%35 = OpConstantNull %bool
+%36 = OpConstantNull %int
+%37 = OpConstantNull %uint
+%38 = OpConstantNull %float
 %100 = OpFunction %void None %6
-%34 = OpLabel
-%a = OpVariable %_ptr_Function_bool Function %30
-%b = OpVariable %_ptr_Function_int Function %31
-%c = OpVariable %_ptr_Function_uint Function %32
-%d = OpVariable %_ptr_Function_float Function %33
+%39 = OpLabel
+%a = OpVariable %_ptr_Function_bool Function %35
+%b = OpVariable %_ptr_Function_int Function %36
+%c = OpVariable %_ptr_Function_uint Function %37
+%d = OpVariable %_ptr_Function_float Function %38
 OpReturn
 OpFunctionEnd
 

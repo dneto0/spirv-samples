@@ -2,11 +2,13 @@
 ; SPIR-V
 ; Version: 1.0
 ; Generator: Khronos SPIR-V Tools Assembler; 0
-; Bound: 33
+; Bound: 34
 ; Schema: 0
 OpCapability Shader
+OpCapability SampleRateShading
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %5 "main" %1 %2 %3 %4
+OpEntryPoint Fragment %5 "main" %1 %2 %3 %4
+OpExecutionMode %5 OriginUpperLeft
 OpDecorate %1 Location 0
 OpDecorate %2 Location 0
 OpDecorate %3 Location 30
@@ -27,14 +29,15 @@ OpDecorate %4 Location 40
 %float_1_5 = OpConstant %float 1.5
 %uint_1 = OpConstant %uint 1
 %int_n1 = OpConstant %int -1
+%int_14 = OpConstant %int 14
 %uint_2 = OpConstant %uint 2
 %v2bool = OpTypeVector %bool 2
 %v2uint = OpTypeVector %uint 2
 %v2int = OpTypeVector %int 2
 %v2float = OpTypeVector %float 2
+%v4float = OpTypeVector %float 4
 %mat3v2float = OpTypeMatrix %v2float 3
 %_arr_uint_uint_2 = OpTypeArray %uint %uint_2
-%_struct_29 = OpTypeStruct %uint %float %_arr_uint_uint_2
 %_ptr_Input_uint = OpTypePointer Input %uint
 %_ptr_Output_uint = OpTypePointer Output %uint
 %1 = OpVariable %_ptr_Input_uint Input
@@ -42,7 +45,7 @@ OpDecorate %4 Location 40
 %3 = OpVariable %_ptr_Input_uint Input
 %4 = OpVariable %_ptr_Output_uint Output
 %5 = OpFunction %void None %7
-%32 = OpLabel
+%33 = OpLabel
 OpReturn
 OpFunctionEnd
 

@@ -6,7 +6,8 @@
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %1 "x_100"
+OpEntryPoint Fragment %1 "x_100"
+OpExecutionMode %1 OriginUpperLeft
 %uint = OpTypeInt 32 0
 %uint_42 = OpConstant %uint 42
 %_arr_uint_uint_42 = OpTypeArray %uint %uint_42

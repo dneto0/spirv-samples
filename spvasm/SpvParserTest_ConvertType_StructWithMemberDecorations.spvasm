@@ -6,7 +6,8 @@
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %1 "x_100"
+OpEntryPoint Fragment %1 "x_100"
+OpExecutionMode %1 OriginUpperLeft
 OpMemberDecorate %_struct_10 0 Offset 0
 OpMemberDecorate %_struct_10 1 Offset 8
 OpMemberDecorate %_struct_10 2 Offset 16

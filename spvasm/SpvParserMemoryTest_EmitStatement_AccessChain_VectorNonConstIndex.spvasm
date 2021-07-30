@@ -6,7 +6,8 @@
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %100 "main"
+OpEntryPoint Fragment %100 "main"
+OpExecutionMode %100 OriginUpperLeft
 OpName %myvar "myvar"
 OpName %a_dynamic_index "a_dynamic_index"
 %void = OpTypeVoid
@@ -15,16 +16,16 @@ OpName %a_dynamic_index "a_dynamic_index"
 %v4uint = OpTypeVector %uint 4
 %uint_2 = OpConstant %uint 2
 %uint_42 = OpConstant %uint 42
-%_ptr_Workgroup_uint = OpTypePointer Workgroup %uint
-%_ptr_Workgroup_v4uint = OpTypePointer Workgroup %v4uint
-%myvar = OpVariable %_ptr_Workgroup_v4uint Workgroup
-%10 = OpVariable %_ptr_Workgroup_v4uint Workgroup
+%_ptr_Private_uint = OpTypePointer Private %uint
+%_ptr_Private_v4uint = OpTypePointer Private %v4uint
+%myvar = OpVariable %_ptr_Private_v4uint Private
+%10 = OpVariable %_ptr_Private_v4uint Private
 %100 = OpFunction %void None %4
 %15 = OpLabel
 %11 = OpLoad %v4uint %10
 %12 = OpCompositeExtract %uint %11 2
 %a_dynamic_index = OpCopyObject %uint %12
-%2 = OpAccessChain %_ptr_Workgroup_uint %myvar %a_dynamic_index
+%2 = OpAccessChain %_ptr_Private_uint %myvar %a_dynamic_index
 OpStore %2 %uint_42
 OpReturn
 OpFunctionEnd

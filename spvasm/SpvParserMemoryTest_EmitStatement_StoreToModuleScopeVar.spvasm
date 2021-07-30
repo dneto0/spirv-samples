@@ -6,13 +6,14 @@
 ; Schema: 0
 OpCapability Shader
 OpMemoryModel Logical Simple
-OpEntryPoint Vertex %100 "main"
+OpEntryPoint Fragment %100 "main"
+OpExecutionMode %100 OriginUpperLeft
 %void = OpTypeVoid
 %3 = OpTypeFunction %void
 %uint = OpTypeInt 32 0
 %uint_42 = OpConstant %uint 42
-%_ptr_Workgroup_uint = OpTypePointer Workgroup %uint
-%1 = OpVariable %_ptr_Workgroup_uint Workgroup
+%_ptr_Private_uint = OpTypePointer Private %uint
+%1 = OpVariable %_ptr_Private_uint Private
 %100 = OpFunction %void None %3
 %7 = OpLabel
 OpStore %1 %uint_42
