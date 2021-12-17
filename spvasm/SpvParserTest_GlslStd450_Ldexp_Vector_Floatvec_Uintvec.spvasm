@@ -1,4 +1,4 @@
-; Test: Samples_SpvParserTest_GlslStd450_Floating_FloatingUinting_Vector_0.spvasm
+; Test: SpvParserTest_GlslStd450_Ldexp_Vector_Floatvec_Uintvec.spvasm
 ; SPIR-V
 ; Version: 1.0
 ; Generator: Khronos SPIR-V Tools Assembler; 0
