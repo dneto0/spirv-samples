@@ -1,4 +1,4 @@
-; Test: SpvModuleScopeVarParserTest_MatrixStrideDecoration_Dropped.spvasm
+; Test: SpvModuleScopeVarParserTest_MatrixStrideDecoration_Natural_Dropped.spvasm
 ; SPIR-V
 ; Version: 1.0
 ; Generator: Khronos SPIR-V Tools Assembler; 0
